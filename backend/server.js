@@ -21,16 +21,19 @@ app.get('/', (req, res) => {
 });
 
 // Rutas de la API
-app.use('/api/auth', require('./src/routes/auth.routes'));
-app.use('/api/usuarios', require('./src/routes/usuarios.routes'));
+//app.use('/api/auth', require('./src/routes/auth.routes'));
+//app.use('/api/usuarios', require('./src/routes/usuarios.routes'));
 app.use('/api/productos', require('./src/routes/productos.routes'));
-app.use('/api/ventas', require('./src/routes/ventas.routes'));
+//app.use('/api/ventas', require('./src/routes/ventas.routes'));
 
 // Manejo de errores
 app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).json({ error: 'Algo salió mal' });
 });
+
+//ruta de prueba
+//app.use("/auth", authRoutes)
 
 app.listen(PORT, () => {
   console.log(`🚀 Servidor corriendo en http://localhost:${PORT}`);
